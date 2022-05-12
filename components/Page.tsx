@@ -4,8 +4,6 @@ import Paper from "@mui/material/Paper";
 import CssBaseline from "@mui/material/CssBaseline";
 import getTheme from "theme/index";
 import AOS from "aos";
-import Header from "./Header";
-import Nav from "./Nav";
 
 interface PageProps {
   children: React.ReactNode;
