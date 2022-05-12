@@ -1,4 +1,5 @@
-import Products from "views/Product/Products";
+import React from 'react';
+import Products from 'views/Product/Products';
 
 const ProductsPage = (): JSX.Element => {
   return <Products />;

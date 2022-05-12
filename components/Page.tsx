@@ -1,9 +1,9 @@
-import React from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import CssBaseline from "@mui/material/CssBaseline";
-import getTheme from "theme/index";
-import AOS from "aos";
+import React from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import CssBaseline from '@mui/material/CssBaseline';
+import getTheme from 'theme/index';
+import AOS from 'aos';
 
 interface PageProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface PageProps {
 export default function Page({ children }: PageProps): JSX.Element {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
+    const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
@@ -21,7 +21,7 @@ export default function Page({ children }: PageProps): JSX.Element {
       once: true,
       delay: 50,
       duration: 500,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
     });
   }, []);
 

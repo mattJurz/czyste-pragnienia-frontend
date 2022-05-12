@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useTheme } from "@mui/material/styles";
-import Main from "layout/Main";
+import Main from "layouts/Main";
 import Container from "components/Container";
 import { Hero, PromoNumbers } from "./components";
 
