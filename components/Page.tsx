@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import CssBaseline from "@mui/material/CssBaseline";
-import getTheme from "@theme/index";
+import getTheme from "theme/index";
 import AOS from "aos";
 import Header from "./Header";
 import Nav from "./Nav";
@@ -10,15 +10,6 @@ import Nav from "./Nav";
 interface PageProps {
   children: React.ReactNode;
 }
-// export default function Page({ children }: PageProps) {
-//   return (
-//     <div>
-//       <Header />
-//       <Nav />
-//       {children}
-//     </div>
-//   );
-// }
 
 export default function Page({ children }: PageProps): JSX.Element {
   React.useEffect(() => {
@@ -40,7 +31,7 @@ export default function Page({ children }: PageProps): JSX.Element {
     <ThemeProvider theme={getTheme()}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Paper elevation={0}>{children}</Paper>
+      <Paper elevation={0}>c{children}</Paper>
     </ThemeProvider>
   );
 }

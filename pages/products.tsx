@@ -1,10 +1,7 @@
-import Products from "../views/Products";
+import Products from "views/Product/Products";
 
-export default function ProductsPage() {
-  return (
-    <div>
-      <h3>Products</h3>
-      <Products />
-    </div>
-  );
-}
+const ProductsPage = (): JSX.Element => {
+  return <Products />;
+};
+
+export default ProductsPage;
