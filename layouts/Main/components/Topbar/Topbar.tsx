@@ -110,18 +110,6 @@ const Topbar = ({
             colorInvert={colorInvert}
           />
         </Box>
-        <Box marginLeft={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
-            size="large"
-          >
-            Buy now
-          </Button>
-        </Box>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
         <Button
