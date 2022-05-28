@@ -54,6 +54,7 @@ const NavItem = ({
       >
         <Typography
           fontWeight={openedPopoverId === id || hasActiveLink() ? 700 : 400}
+          textTransform="uppercase"
           color={linkColor}
         >
           {title}

@@ -1,7 +1,7 @@
-import { Theme, responsiveFontSizes } from "@mui/material";
-import { createTheme, ComponentsOverrides } from "@mui/material/styles";
-import shadows from "./shadows";
-import { light } from "./palette";
+import { Theme, responsiveFontSizes } from '@mui/material';
+import { createTheme, ComponentsOverrides } from '@mui/material/styles';
+import shadows from './shadows';
+import { light } from './palette';
 
 const getTheme = (): Theme =>
   responsiveFontSizes(
@@ -9,10 +9,10 @@ const getTheme = (): Theme =>
       palette: light,
       shadows: shadows(),
       typography: {
-        fontFamily: '"Inter", sans-serif',
+        fontFamily: '"Montserrat", sans-serif',
         button: {
-          textTransform: "none",
-          fontWeight: "medium" as React.CSSProperties["fontWeight"],
+          textTransform: 'none',
+          fontWeight: 'medium' as React.CSSProperties['fontWeight'],
         },
       },
       zIndex: {
@@ -28,15 +28,15 @@ const getTheme = (): Theme =>
               paddingTop: 10,
               paddingBottom: 10,
             },
-            containedSecondary: { color: "white" },
-          } as ComponentsOverrides["MuiButton"],
+            containedSecondary: { color: 'white' },
+          } as ComponentsOverrides['MuiButton'],
         },
         MuiInputBase: {
           styleOverrides: {
             root: {
               borderRadius: 5,
             },
-          } as ComponentsOverrides["MuiInputBase"],
+          } as ComponentsOverrides['MuiInputBase'],
         },
         MuiOutlinedInput: {
           styleOverrides: {
@@ -46,17 +46,17 @@ const getTheme = (): Theme =>
             input: {
               borderRadius: 5,
             },
-          } as ComponentsOverrides["MuiOutlinedInput"],
+          } as ComponentsOverrides['MuiOutlinedInput'],
         },
         MuiCard: {
           styleOverrides: {
             root: {
               borderRadius: 8,
             },
-          } as ComponentsOverrides["MuiCard"],
+          } as ComponentsOverrides['MuiCard'],
         },
       },
-    })
+    }),
   );
 
 export default getTheme;
