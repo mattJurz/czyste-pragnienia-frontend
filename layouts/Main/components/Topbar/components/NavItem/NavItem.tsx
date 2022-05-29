@@ -36,11 +36,11 @@ const NavItem = ({ title, href, colorInvert = false }: Props): JSX.Element => {
         letterSpacing: '2px',
         lineHeight: '50px',
         padding: 0,
-        borderBottom: isCurrent && `5px solid ${theme.palette.primary.main}`,
-        marginBottom: isCurrent && '-5px',
+        borderBottom: isCurrent && `3px solid ${theme.palette.primary.main}`,
+        marginBottom: isCurrent && '-3px',
         '&:hover': {
-          borderBottom: `5px solid ${theme.palette.primary.main}`,
-          marginBottom: '-5px',
+          borderBottom: `3px solid ${theme.palette.primary.main}`,
+          marginBottom: '-3px',
         },
       }}
     >

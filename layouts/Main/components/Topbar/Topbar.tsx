@@ -3,7 +3,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { NavItem } from './components';
+import Link from 'next/link';
+import { IconButton } from '@mui/material';
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -77,6 +80,21 @@ const Topbar = ({
         <Box marginLeft={4}>
           <NavItem title="Blog" href="blog" colorInvert={colorInvert} />
         </Box>
+        <Box marginLeft={4}>
+          <IconButton
+            aria-label="login"
+            size="large"
+            sx={{ color: 'white' }}
+            href="/login"
+          >
+            <AccountCircleIcon />
+          </IconButton>
+        </Box>
+        {/* <Box marginLeft={4}>
+          <Link target="blank" href="/login">
+            Logowanie
+          </Link>
+        </Box> */}
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
         <Button
