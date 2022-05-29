@@ -9,7 +9,7 @@ const getTheme = (): Theme =>
       palette: light,
       shadows: shadows(),
       typography: {
-        fontFamily: '"Montserrat", sans-serif',
+        fontFamily: '"League Spartan", sans-serif',
         button: {
           textTransform: 'none',
           fontWeight: 'medium' as React.CSSProperties['fontWeight'],

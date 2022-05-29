@@ -29,11 +29,7 @@ const Footer = (): JSX.Element => {
           >
             <Box
               component={'img'}
-              src={
-                mode === 'light'
-                  ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                  : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-              }
+              src={mode === 'light' ? '/svg/logo.svg' : '/svg/logo.svg'}
               height={1}
               width={1}
             />
@@ -83,18 +79,7 @@ const Footer = (): JSX.Element => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; theFront. 2021, Maccarian. All rights reserved
-        </Typography>
-        <Typography
-          align={'center'}
-          variant={'caption'}
-          color="text.secondary"
-          component={'p'}
-        >
-          When you visit or interact with our sites, services or tools, we or
-          our authorised service providers may use cookies for storing
-          information to help provide you with a better, faster and safer
-          experience and for marketing purposes.
+          &copy; Czyste Pragnienia. 2022 All rights reserved
         </Typography>
       </Grid>
     </Grid>

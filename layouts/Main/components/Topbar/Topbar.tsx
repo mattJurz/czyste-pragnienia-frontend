@@ -36,15 +36,15 @@ const Topbar = ({
         display={'flex'}
         component="a"
         href="/"
-        title="theFront"
-        width={{ xs: 100, md: 120 }}
+        title="Czyste Pragnienia"
+        width={{ xs: 90, md: 100 }}
       >
         <Box
           component={'img'}
           src={
             mode === 'light' && !colorInvert
-              ? '/svg/logo-white.svg'
-              : '/svg/logo-white.svg'
+              ? '/svg/logo-icon.svg'
+              : '/svg/logo-icon-white.svg'
           }
           height={1}
           width={1}
@@ -52,18 +52,12 @@ const Topbar = ({
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box marginLeft={4}>
-          <NavItem
-            title={'O nas'}
-            id={'about-pages'}
-            items={aboutPages}
-            colorInvert={colorInvert}
-          />
+          <NavItem title="O nas" href="about-pages" colorInvert={colorInvert} />
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Kursy'}
-            id={'courses-pages'}
-            items={coursesPages}
+            title="Kursy"
+            href="courses-pages"
             colorInvert={colorInvert}
           />
         </Box>
