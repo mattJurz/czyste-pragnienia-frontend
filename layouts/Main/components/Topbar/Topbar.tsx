@@ -61,6 +61,23 @@ const Topbar = ({
             colorInvert={colorInvert}
           />
         </Box>
+        <Box marginLeft={4}>
+          <NavItem
+            title="Księgarnia"
+            href="ksiegarnia"
+            colorInvert={colorInvert}
+          />
+        </Box>
+        <Box marginLeft={4}>
+          <NavItem
+            title="Materiały"
+            href="materialy"
+            colorInvert={colorInvert}
+          />
+        </Box>
+        <Box marginLeft={4}>
+          <NavItem title="Blog" href="blog" colorInvert={colorInvert} />
+        </Box>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
         <Button

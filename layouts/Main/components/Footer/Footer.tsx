@@ -57,18 +57,6 @@ const Footer = (): JSX.Element => {
                 Documentation
               </Link>
             </Box>
-            <Box marginTop={1}>
-              <Button
-                variant="outlined"
-                color="primary"
-                component="a"
-                target="blank"
-                href="https://mui.com/store/items/the-front-landing-page/"
-                size="small"
-              >
-                Purchase now
-              </Button>
-            </Box>
           </Box>
         </Box>
       </Grid>
