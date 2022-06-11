@@ -13,7 +13,7 @@ import {
   VideoSection,
 } from './components';
 
-const Expo = (): JSX.Element => {
+const Home = (): JSX.Element => {
   return (
     <Main colorInvert={true}>
       <Hero />
@@ -25,11 +25,11 @@ const Expo = (): JSX.Element => {
       {/* <Container>
         <PromoNumbers />
       </Container>
-      <Divider />
+      <Divider />*/}
       <Container>
         <Advantages />
       </Container>
-      <Box bgcolor={'alternate.main'}>
+      {/*  <Box bgcolor={'alternate.main'}>
         <Container>
           <VideoSection />
         </Container>
@@ -43,4 +43,4 @@ const Expo = (): JSX.Element => {
   );
 };
 
-export default Expo;
+export default Home;

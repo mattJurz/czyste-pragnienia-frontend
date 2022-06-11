@@ -1,1 +1,1 @@
-export { default } from './expo';
+export { default } from './home';
