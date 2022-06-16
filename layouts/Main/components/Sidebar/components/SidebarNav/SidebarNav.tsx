@@ -20,20 +20,24 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
 
   return (
     <Box>
-      <Box width={1} paddingX={2} paddingY={1}>
+      <Box
+        width={1}
+        paddingX={2}
+        paddingY={3}
+        display="flex"
+        justifyContent="center"
+      >
         <Box
           display={'flex'}
           component="a"
           href="/"
           title="theFront"
-          width={{ xs: 100, md: 120 }}
+          width={{ xs: 160 }}
         >
           <Box
             component={'img'}
             src={
-              mode === 'light'
-                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
+              mode === 'light' ? '/svg/logo.svg' : '/svg/logo-icon-white.svg'
             }
             height={1}
             width={1}
@@ -54,22 +58,9 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
             variant="outlined"
             fullWidth
             component="a"
-            href="/docs/introduction"
+            href="#"
           >
-            Documentation
-          </Button>
-        </Box>
-        <Box marginTop={1}>
-          <Button
-            size={'large'}
-            variant="contained"
-            color="primary"
-            fullWidth
-            component="a"
-            target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
-          >
-            Purchase now
+            Logowanie
           </Button>
         </Box>
       </Box>

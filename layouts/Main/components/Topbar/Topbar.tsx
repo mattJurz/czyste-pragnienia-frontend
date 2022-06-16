@@ -26,7 +26,7 @@ const Topbar = ({
   const theme = useTheme();
   const { mode } = theme.palette;
   const { about: aboutPages, courses: coursesPages } = pages;
-
+  console.log('inver ', colorInvert);
   return (
     <Box
       display={'flex'}
@@ -84,7 +84,7 @@ const Topbar = ({
           <IconButton
             aria-label="login"
             size="large"
-            sx={{ color: 'white' }}
+            sx={{ color: colorInvert ? 'white' : 'black' }}
             href="/login"
           >
             <AccountCircleIcon />
@@ -105,14 +105,23 @@ const Topbar = ({
             borderRadius: 2,
             minWidth: 'auto',
             padding: 1,
-            borderColor: alpha(theme.palette.divider, 0.2),
+            borderColor: colorInvert
+              ? alpha(theme.palette.common.white, 0.5)
+              : alpha(theme.palette.divider, 0.2),
           }}
         >
-          <MenuIcon />
+          <MenuIcon
+            sx={{
+              color: colorInvert
+                ? alpha(theme.palette.common.white, 0.8)
+                : theme.palette.primary.main,
+            }}
+          />
         </Button>
       </Box>
     </Box>
   );
+  ``;
 };
 
 export default Topbar;
