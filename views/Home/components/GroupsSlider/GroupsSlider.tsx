@@ -17,8 +17,8 @@ const mock = [
   {
     price: '$59 / month',
     media: 'https://assets.maccarianagency.com/backgrounds/img5.jpg',
-    title: 'UX & web design',
-    tutor: 'Joshua Karamaki',
+    title: 'S101',
+    location: 'online',
     users: [
       'https://assets.maccarianagency.com/avatars/img1.jpg',
       'https://assets.maccarianagency.com/avatars/img2.jpg',
@@ -30,6 +30,7 @@ const mock = [
   {
     price: '$69 / month',
     media: 'https://assets.maccarianagency.com/backgrounds/img6.jpg',
+    location: 'online',
     title: 'Software engineering',
     tutor: 'Jhon Smith',
     users: [
@@ -44,6 +45,7 @@ const mock = [
     price: '$49 / month',
     media: 'https://assets.maccarianagency.com/backgrounds/img7.jpg',
     title: 'Graphic design for beginners',
+    location: 'online',
     tutor: 'Nicol Adams',
     users: [
       'https://assets.maccarianagency.com/avatars/img1.jpg',
@@ -56,6 +58,7 @@ const mock = [
   {
     price: '$59 / month',
     media: 'https://assets.maccarianagency.com/backgrounds/img9.jpg',
+    location: 'online',
     title: 'Marketing VS Sales',
     tutor: 'Joshua Karamaki',
     users: [
@@ -68,7 +71,7 @@ const mock = [
   },
 ];
 
-const Spaces = (): JSX.Element => {
+const GroupSlider = (): JSX.Element => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -77,7 +80,7 @@ const Spaces = (): JSX.Element => {
   const sliderOpts = {
     dots: true,
     arrows: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: isMd ? 3 : 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -96,7 +99,7 @@ const Spaces = (): JSX.Element => {
           color={'secondary'}
           align={'center'}
         >
-          Popular courses
+          Grupy
         </Typography>
         <Typography
           variant="h4"
@@ -107,61 +110,8 @@ const Spaces = (): JSX.Element => {
             fontWeight: 700,
           }}
         >
-          Browse our popular courses
+          Join a group
         </Typography>
-        <Typography
-          variant="h6"
-          align={'center'}
-          color={'text.secondary'}
-          data-aos={'fade-up'}
-        >
-          Here are our popular course you might want to learn from your tutor.
-        </Typography>
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-          justifyContent={'center'}
-          marginTop={2}
-        >
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            fullWidth={isMd ? false : true}
-            endIcon={
-              <Box
-                component={'svg'}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                width={24}
-                height={24}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </Box>
-            }
-          >
-            View all
-          </Button>
-          <Box
-            component={Button}
-            variant="outlined"
-            color="primary"
-            size="large"
-            marginTop={{ xs: 2, sm: 0 }}
-            marginLeft={{ sm: 2 }}
-            fullWidth={isMd ? false : true}
-          >
-            Explore more
-          </Box>
-        </Box>
       </Box>
       <Box maxWidth={{ xs: 420, sm: 620, md: 1 }} margin={'0 auto'}>
         <Slider {...sliderOpts}>
@@ -236,31 +186,6 @@ const Spaces = (): JSX.Element => {
                           {item.price}
                         </Typography>
                       </Box>
-                      <Button
-                        variant={'contained'}
-                        color="primary"
-                        size="large"
-                        startIcon={
-                          <Box
-                            component={'svg'}
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            width={16}
-                            height={16}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                            />
-                          </Box>
-                        }
-                      >
-                        Save
-                      </Button>
                     </Box>
                   </CardMedia>
                   <CardContent>
@@ -283,49 +208,48 @@ const Spaces = (): JSX.Element => {
                         height={24}
                         marginRight={1}
                       >
-                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </Box>
-                      <Typography variant={'subtitle1'} color="text.secondary">
-                        {item.tutor}
+                      <Typography variant={'subtitle2'} color="text.secondary">
+                        {item.location}
                       </Typography>
-                    </Box>
-                    <Box
-                      marginTop={2}
-                      display={'flex'}
-                      justifyContent={'space-between'}
-                    >
-                      <AvatarGroup max={4}>
-                        {item.users.map((u) => (
-                          <Avatar key={u} src={u} />
-                        ))}
-                      </AvatarGroup>
-                      <Box display={'flex'} alignItems={'center'}>
-                        <Box
-                          component={'svg'}
-                          width={20}
-                          height={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          color={colors.yellow[700]}
-                          marginRight={1}
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </Box>
-                        <Typography sx={{ fontWeight: 700 }}>5.0</Typography>
-                      </Box>
                     </Box>
                   </CardContent>
                   <Box flexGrow={1} />
                   <CardActions sx={{ justifyContent: 'flex-end' }}>
-                    <Button>Learn more</Button>
+                    <Button
+                      endIcon={
+                        <Box
+                          component={'svg'}
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          width={24}
+                          height={24}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </Box>
+                      }
+                    >
+                      Dołącz
+                    </Button>
                   </CardActions>
                 </Box>
               </Box>
@@ -337,4 +261,4 @@ const Spaces = (): JSX.Element => {
   );
 };
 
-export default Spaces;
+export default GroupSlider;

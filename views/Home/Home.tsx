@@ -12,9 +12,12 @@ import {
   Speakers,
   VideoSection,
   Groups,
-  Courses,
+  GroupSlider,
 } from './components';
-import { useTheme } from '@mui/material';
+import { alpha, useTheme } from '@mui/material';
+import Hope from './components/Hope';
+import LastStories from './components/LastStories';
+import Video from './components/Video';
 
 const Home = (): JSX.Element => {
   const theme = useTheme();
@@ -35,9 +38,38 @@ const Home = (): JSX.Element => {
         <Advantages />
       </Container>
       <Divider />
-      <Container>
+      <Box
+        bgcolor={'alternate.main'}
+        sx={{
+          position: 'relative',
+          '&::after': {
+            position: 'absolute',
+            content: '""',
+            width: '30%',
+            zIndex: 1,
+            top: 0,
+            left: '5%',
+            height: '100%',
+            backgroundSize: '18px 18px',
+            backgroundImage: `radial-gradient(${alpha(
+              theme.palette.primary.dark,
+              0.4,
+            )} 20%, transparent 20%)`,
+            opacity: 0.2,
+          },
+        }}
+      >
+        <Container>
+          <Hope />
+        </Container>
+      </Box>
+      {/* <Container>
+        <VideoSection />
+      </Container> */}
+      <Video />
+      {/* <Container>
         <Groups />
-      </Container>
+      </Container> */}
       <Divider />
       <Box
         position={'relative'}
@@ -46,7 +78,7 @@ const Home = (): JSX.Element => {
         }}
       >
         <Container>
-          <Courses />
+          <GroupSlider />
         </Container>
         <Box
           component={'svg'}
@@ -67,14 +99,14 @@ const Home = (): JSX.Element => {
         </Box>
       </Box>
 
-      {/*  <Box bgcolor={'alternate.main'}>
+      <Container paddingTop={'0 !important'}>
+        <LastStories />
+      </Container>
+      {/* <Box bgcolor={'alternate.main'}>
         <Container>
-          <VideoSection />
+          <Speakers />
         </Container>
       </Box>
-      <Container>
-        <Speakers />
-      </Container>
       <Divider />
       <About /> */}
     </Main>

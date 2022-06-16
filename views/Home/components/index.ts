@@ -8,4 +8,4 @@ export { default as Partners } from './Partners';
 export { default as Speakers } from './Speakers';
 export { default as VideoSection } from './VideoSection';
 export { default as Groups } from './Groups';
-export { default as Courses } from './Courses';
+export { default as GroupSlider } from './GroupsSlider';

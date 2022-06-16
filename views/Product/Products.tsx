@@ -6,12 +6,11 @@ import { Hero, PromoNumbers } from './components';
 
 const ALL_PRODUCTS_QUERY = gql`
   query ALL_PRODUCTS_QUERY {
-    products {
+    groups {
       name
-      photo {
-        image {
-          publicUrl
-        }
+      description
+      participants {
+        name
       }
     }
   }
