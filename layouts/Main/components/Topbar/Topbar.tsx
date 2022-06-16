@@ -26,7 +26,7 @@ const Topbar = ({
   const theme = useTheme();
   const { mode } = theme.palette;
   const { about: aboutPages, courses: coursesPages } = pages;
-  console.log('inver ', colorInvert);
+
   return (
     <Box
       display={'flex'}

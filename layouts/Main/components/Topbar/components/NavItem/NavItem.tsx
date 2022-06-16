@@ -18,7 +18,7 @@ const NavItem = ({ title, href, colorInvert = false }: Props): JSX.Element => {
 
   const linkColor = colorInvert ? 'common.white' : 'text.primary';
   const isCurrent = activeLink === href;
-  console.log(activeLink);
+
   return (
     <Link
       href={href}

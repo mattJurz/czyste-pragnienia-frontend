@@ -11,73 +11,26 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-
-import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
-import { Card, CardMedia } from '@mui/material';
+import { Card, CardMedia, SvgIcon } from '@mui/material';
+import FistIcon from '/public/svg/icons/hand-fist-solid.svg';
+import SmileIcon from '/public/svg/icons/face-smile-regular.svg';
+import MedicalKitIcon from '/public/svg/icons/kit-medical-solid.svg';
 
 const mock = [
   {
     title: 'OWN YOUR STORY',
     subtitle: 'Understand how family of origin and trauma impact your behavior',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-        />
-      </svg>
-    ),
+    icon: FistIcon,
   },
   {
     title: 'GET EQUIPPED',
     subtitle: 'Develop a plan and use tools to create healing and freedom',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-        />
-      </svg>
-    ),
+    icon: MedicalKitIcon,
   },
   {
     title: 'TAKE YOUR LIFE BACK',
     subtitle: 'Be confident as the real and authentic you',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    ),
+    icon: SmileIcon,
   },
 ];
 
@@ -89,7 +42,7 @@ const Hope = (): JSX.Element => {
 
   const LeftSide = () => (
     <List disablePadding>
-      {mock.map((item, index) => (
+      {mock.map(({ title, subtitle, icon: Icon }, index) => (
         <ListItem
           key={index}
           disableGutters
@@ -101,14 +54,22 @@ const Hope = (): JSX.Element => {
           <ListItemAvatar>
             <Box
               component={Avatar}
+              height={60}
+              width={60}
+              mr={2}
               variant={'rounded'}
               color={theme.palette.primary.dark}
               bgcolor={`${theme.palette.primary.light}22`}
             >
-              {item.icon}
+              <SvgIcon
+                component={Icon}
+                inheritViewBox
+                color="primary"
+                sx={{ fontSize: 40 }}
+              />
             </Box>
           </ListItemAvatar>
-          <ListItemText primary={item.title} secondary={item.subtitle} />
+          <ListItemText primary={title} secondary={subtitle} />
         </ListItem>
       ))}
     </List>
