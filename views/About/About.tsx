@@ -1,49 +1,27 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
+import Page from 'views/Page';
 
-import Main from 'layouts/Main';
-import Container from 'components/Container';
-import {
-  Contact,
-  Gallery,
-  Hero,
-  Partners,
-  Story,
-  Team,
-  WhoWeAre,
-  Application,
-} from './components';
+const title = 'O nas';
+const description = 'Kim jesteśmy?';
+const backgroundImageURL = 'https://assets.maccarianagency.com/backgrounds/img52.jpg';
+const sectionsProps = [
+  {
+    title: 'Misja',
+    content: 'Lives and relationships are being destroyed by unwanted sexual behavior. At Pure Desire, we offer clinical counseling so that you can break free, heal relationships, and live in sexual health.',
+    image: 'https://assets.maccarianagency.com/svg/illustrations/drawkit-illustration1.svg'
+  },
+  {
+    title: 'Świadectwa',
+    content: 'Lives and relationships are being destroyed by unwanted sexual behavior. At Pure Desire, we offer clinical counseling so that you can break free, heal relationships, and live in sexual health.'
+  }
+];
 
 const About = (): JSX.Element => {
   return (
-    <Main colorInvert={true}>
-      <Hero />
-      <Container>
-        <Story />
-      </Container>
-      <Container paddingTop={'0 !important'}>
-        <WhoWeAre />
-      </Container>
-      <Container maxWidth={800} paddingY={'0 !important'}>
-        <Divider />
-      </Container>
-      <Container>
-        <Team />
-      </Container>
-      <Box bgcolor={'alternate.main'}>
-        <Container>
-          <Partners />
-        </Container>
-      </Box>
-      <Contact />
-      <Container>
-        <Gallery />
-      </Container>
-      <Container maxWidth={800} paddingTop={'0 !important'}>
-        <Application />
-      </Container>
-    </Main>
+    <Page title={title}
+      description={description}
+      backgroundImageURL={backgroundImageURL}
+      sectionsProps={sectionsProps}/>
   );
 };
 

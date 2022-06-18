@@ -54,7 +54,7 @@ const Topbar = ({
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box marginLeft={4}>
-          <NavItem title="O nas" href="about-pages" colorInvert={colorInvert} />
+          <NavItem title="O nas" href="about" colorInvert={colorInvert} />
         </Box>
         <Box marginLeft={4}>
           <NavItem
