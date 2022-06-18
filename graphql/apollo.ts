@@ -1,15 +1,15 @@
-import { IncomingMessage, ServerResponse } from "http";
-import { useMemo } from "react";
+import { IncomingMessage, ServerResponse } from 'http';
+import { useMemo } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloLink,
   NormalizedCacheObject,
-} from "@apollo/client";
-import { onError } from "@apollo/link-error";
+} from '@apollo/client';
+import { onError } from '@apollo/link-error';
 // import { getDataFromTree } from "@apollo/client/react/ssr";
-import { createUploadLink } from "apollo-upload-client";
-import { endpoint, prodEndpoint } from "../config";
+import { createUploadLink } from 'apollo-upload-client';
+import { apiUrl } from '../config';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
@@ -39,19 +39,19 @@ function createApolloClient(context?: ResolverContext) {
         if (graphQLErrors)
           graphQLErrors.forEach(({ message, locations, path }) =>
             console.log(
-              `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-            )
+              `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+            ),
           );
         if (networkError)
           console.log(
-            `[Network error]: ${networkError}. Backend is unreachable. Is it running?`
+            `[Network error]: ${networkError}. Backend is unreachable. Is it running?`,
           );
       }),
       // this uses apollo-link-http under the hood, so all the options here come from that package
       createUploadLink({
-        uri: process.env.NODE_ENV === "development" ? endpoint : prodEndpoint,
+        uri: apiUrl,
         fetchOptions: {
-          credentials: "include",
+          credentials: 'include',
         },
         // pass the headers along from this request. This enables SSR with logged in state
         // headers,
@@ -74,7 +74,7 @@ export function initializeApollo(
   initialState: any = null,
   // Pages with Next.js data fetching methods, like `getStaticProps`, can send
   // a custom context which will be used by `SchemaLink` to server render pages
-  context?: ResolverContext
+  context?: ResolverContext,
 ) {
   const _apolloClient = apolloClient ?? createApolloClient(context);
 
@@ -84,7 +84,7 @@ export function initializeApollo(
     _apolloClient.cache.restore(initialState);
   }
   // For SSG and SSR always create a new Apollo Client
-  if (typeof window === "undefined") return _apolloClient;
+  if (typeof window === 'undefined') return _apolloClient;
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient;
 

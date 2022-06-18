@@ -1,3 +1,6 @@
-export const endpoint = `http://localhost:4000/api/graphql`;
-export const prodEndpoint = `fill me in when we deploy`;
+import process from 'process';
+
+export const apiUrl =
+  process.env.API_URL ||
+  'https://czyste-pragnienia-backend-dev.herokuapp.com/api/graphql';
 export const perPage = 2;
