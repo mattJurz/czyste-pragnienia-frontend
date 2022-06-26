@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 import Container from 'components/Container';
 
-interface Props {
+export interface Props {
   title: string,
   description: string,
   backgroundImageURL: string

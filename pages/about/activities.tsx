@@ -1,9 +1,11 @@
 import React from 'react';
 import Page from 'views/Page';
 
-const title = 'O nas';
-const description = 'Kim jesteśmy?';
-const backgroundImageURL = 'https://assets.maccarianagency.com/backgrounds/img52.jpg';
+const heroProps = {
+  title: 'Aktywności',
+  description: 'Co robimy?',
+  backgroundImageURL: 'https://assets.maccarianagency.com/backgrounds/img52.jpg'
+};
 const sectionsProps = [
   {
     title: 'Misja',
@@ -16,13 +18,11 @@ const sectionsProps = [
   }
 ];
 
-const About = (): JSX.Element => {
+const ActivitiesPage = (): JSX.Element => {
   return (
-    <Page title={title}
-      description={description}
-      backgroundImageURL={backgroundImageURL}
+    <Page heroProps={heroProps}
       sectionsProps={sectionsProps}/>
   );
 };
 
-export default About;
+export default ActivitiesPage;

@@ -10,10 +10,10 @@ import Container from 'components/Container';
 export interface Props {
   title: string,
   content: string,
-  image?: string
+  imageURL?: string
 }
 
-const Section = ({title, content, image}: Props): JSX.Element => {
+const Section = ({title, content, imageURL}: Props): JSX.Element => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -25,15 +25,12 @@ const Section = ({title, content, image}: Props): JSX.Element => {
         <Grid container spacing={4} direction={isMd ? 'row' : 'column'}>
           <Grid item container alignItems={'center'} xs={12} md={6}>
             <Box>
-              <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }}>
-                {title}
-              </Typography>
-              <Typography component={'p'}>
-                {content}
-              </Typography>
+              <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }} dangerouslySetInnerHTML={{__html: title}}/>
+              <Typography component={'p'}
+                dangerouslySetInnerHTML={{__html: content}}/>
             </Box>
           </Grid>
-          {image && <Grid
+          {imageURL && <Grid
             item
             container
             justifyContent="center"
@@ -44,7 +41,7 @@ const Section = ({title, content, image}: Props): JSX.Element => {
             <Box maxWidth={500} width={1}>
               <Box
                 component={'img'}
-                src={image}
+                src={imageURL}
                 width={1}
                 height={1}
                 sx={{

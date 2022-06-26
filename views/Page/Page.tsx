@@ -5,21 +5,18 @@ import {
   Section
 } from './components';
 
+import { Props as HeroProps } from './components/Hero/Hero';
 import { Props as SectionProps } from './components/Section/Section';
 
 interface Props {
-  title: string,
-  description: string,
-  backgroundImageURL: string,
+  heroProps?: HeroProps,
   sectionsProps: SectionProps[]
 }
 
-const About = ({title, description, backgroundImageURL, sectionsProps}: Props): JSX.Element => {
+const Page = ({heroProps, sectionsProps}: Props): JSX.Element => {
   return (
     <Main colorInvert={true}>
-      <Hero title={title}
-        description={description}
-        backgroundImageURL={backgroundImageURL}/>
+      {heroProps && <Hero {...heroProps}/>}
       {sectionsProps.map((sectionProps, index) =>
         <Section key={index}
           {...sectionProps}/>
@@ -28,4 +25,4 @@ const About = ({title, description, backgroundImageURL, sectionsProps}: Props): 
   );
 };
 
-export default About;
+export default Page;
